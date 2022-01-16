@@ -1,0 +1,41 @@
+/*
+506min
+style       ID      Classes, atributos e pseudo-classes     Elementos e pseudo-elementos
+  X         1       0                                       0
+            0       1                                       0
+            1       1                                       0
+            1       1                                       1
+            2       1                                       1
+            2       1                                       2
+            2       2                                       3
+!important: pouco usado, força o navegador.           
+
+display: block é por padrão o display das div em qualquer navegador!
+margin: 0   1   3   4       0 é em cima
+                            1 é a direita
+                            3 é em baixo
+                            4 é a esquerda
+
+box-sizing: contet-box      significa que border, padding e margin serão somados.                          
+box-sizing: padding-box     significa que o padding vai começar a ser acrescentado para dentro.
+box-sizing: border-box       significa que se uma div tem 100px, é 100px para altura e largura+altura e largura do padding+altura e largura da borda. Só a margem não entra até pq a margin é para empurrar o conteúdo para longe de outro.
+clear: left ou right        Força o elemento limpar o lado escolhido antes de aparecer.
+
+*/
+ p {
+     font-size: 20px;
+     font-style: italic;
+     font-weight: bold;
+     direction: rtl; /* direção right to left */
+     letter-spacing: 1px; /* espaçamento entre as letras */
+     word-spacing: 5px; /* espaçamento entre as palavras */
+     line-height: 25px; /* altura da linha do texto */
+     text-align: left; /* alinhamento do texto */
+     text-decoration:  line-through underline overline; /* decoração do texto com sublinhado, riscado etc */
+    text-indent: 50px; /* margem da primeira linha */
+    text-shadow: -1px 2px 1px red; /* esquerda ou direita- cima ou baixo- esfumaçado - cor */
+    /*text-transform: lowercase; /* tudo minúsculo*/ 
+    /*text-transform: uppercase /* tudo maiúsculo */;
+    text-transform: capitalize; /* uma letra maiúscula em cada palavra */
+    
+}

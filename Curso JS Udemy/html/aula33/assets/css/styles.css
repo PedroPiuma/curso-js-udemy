@@ -1,0 +1,82 @@
+/*
+506min
+style       ID      Classes, atributos e pseudo-classes     Elementos e pseudo-elementos
+  X         1       0                                       0
+            0       1                                       0
+            1       1                                       0
+            1       1                                       1
+            2       1                                       1
+            2       1                                       2
+            2       2                                       3
+!important: pouco usado, força o navegador.           
+
+display: block é por padrão o display das div em qualquer navegador!
+margin: 0   1   3   4       0 é em cima
+                            1 é a direita
+                            3 é em baixo
+                            4 é a esquerda
+
+box-sizing: contet-box      significa que border, padding e margin serão somados.                          
+box-sizing: padding-box     significa que o padding vai começar a ser acrescentado para dentro.
+box-sizing: border-box       significa que se uma div tem 100px, é 100px para altura e largura+altura e largura do padding+altura e largura da borda. Só a margem não entra até pq a margin é para empurrar o conteúdo para longe de outro.
+clear: left ou right        Força o elemento limpar o lado escolhido antes de aparecer.
+
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.grid {
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+.grid::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.grid .col {
+  box-sizing: border-box;
+  width: 33.33%;
+  height: 300px;
+  display: block;
+  float: left;
+  padding: 15px;
+}
+
+.grid .col-content {
+  width: 100%;
+  height: 100%;
+  background: red;
+}
+
+p {
+   clear: left;
+}
+
+@media all and (max-width: 320px) {
+  .grid .col {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 321px) and (max-width: 768px) {
+  .grid .col {
+    width: 50%;
+  }
+}
+
+@media all and (min-width: 769px) and (max-width: 1200px) {
+  .grid .col {
+    width: 33,33%;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .grid .col {
+    width: 25%;
+  }
+}

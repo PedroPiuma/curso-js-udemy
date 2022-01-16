@@ -1,0 +1,167 @@
+/*
+506min
+style       ID      Classes, atributos e pseudo-classes     Elementos e pseudo-elementos
+  X         1       0                                       0
+            0       1                                       0
+            1       1                                       0
+            1       1                                       1
+            2       1                                       1
+            2       1                                       2
+            2       2                                       3
+!important: pouco usado, força o navegador.           
+
+display: block é por padrão o display das div em qualquer navegador!
+margin: 0   1   3   4       0 é em cima
+                            1 é a direita
+                            3 é em baixo
+                            4 é a esquerda
+
+box-sizing: contet-box      significa que border, padding e margin serão somados.                          
+box-sizing: padding-box     significa que o padding vai começar a ser acrescentado para dentro.
+box-sizing: border-box       significa que se uma div tem 100px, é 100px para altura e largura+altura e largura do padding+altura e largura da borda. Só a margem não entra até pq a margin é para empurrar o conteúdo para longe de outro.
+clear: left ou right        Força o elemento limpar o lado escolhido antes de aparecer.
+
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* a página rola de maneira suave */
+}
+
+body {
+    font-family: sans-serif;
+    /* fonte do texto diferente */
+}
+
+.grid {
+    padding: 15px;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding-top: 73px;
+}
+
+.grid::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.grid .col {
+    box-sizing: border-box;
+    width: 33.33%;
+    height: 300px;
+    display: block;
+    float: left;
+    padding: 15px;
+}
+
+.grid .col-content {
+    width: 100%;
+    height: 100%;
+    background: red;
+    border-top-left-radius: 150px;
+    /* arrendonda as bordas, no caso o topo erquerdo */
+    /* ou também border-radius: 100px 100px 100px 100px; */
+    /* para ficar redendo sem e não se deformar com a mudança de tamanho da página dá pra mudar o width e height para tamanhos iguas
+    em pixels e dizer que o border-radius: 50%; */
+    /*  width: 100px;
+        height: 100px;
+        border-radius: 50%; */
+
+    box-shadow: 5px 5px 0 0 blue, 15px 15px 15px 15px black;
+    /* pode ser usado números negativos também */
+    /* terceiro valor é o bluur, fica esfumaçado para todos lados 
+        pra verificar dá pra usar box-shadow: 0 0 15px 0;    
+        o quarto valor é o espalhamento, basicamente um enchimento como se fosse um padding para sombra.
+        ao combinar  com o terceiro tem como fazer um efeito de desfoque
+        dá pra testar verificando box-shadow: 0 0 15px 15px;
+        */
+    /* tem como colocar uma segunda sombra adicionando vírgula ao fim da primeiro, exemplo:box-shadow: ;
+        box-shadow: 5px 5px 0 0 blue, 5px 5px 5px black; */
+}
+
+p {
+    clear: left;
+    border: 1px solid black;
+    /* borda do texto */
+}
+
+.menu {
+    width: 100%;
+    position: fixed;
+    background-color: black;
+    /* background do menu flutuate do topo */
+}
+
+.menu ul {
+    list-style: none;
+    display: block;
+    max-width: 1200px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+.menu ul li {
+    float: left;
+}
+
+.menu ul li a {
+    display: block;
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+    transition: all 300ms ease-in-out;
+}
+
+.menu ul li a:hover {
+    background-color: #333;
+}
+
+.full-page {
+    max-width: 100%;
+    /* largura total da página */
+    padding: 0 30px;
+    padding-top: 73px;
+    height: 100vh;
+    /* altura é igual a 100% do viewport, ou seja, toda tela visível */
+    background-color: turquoise;
+    margin: 0 auto;
+    border: 1px solid rgb(17, 0, 255);
+    /* borda da seção que tem a div com o texto e h1 */
+}
+
+.full-page-content {
+    max-width: 100%;
+    padding: 0 30px;
+    border: 1px solid red;
+    /* borda da div do texto com h1 */
+}
+
+@media all and (max-width: 320px) {
+    .grid .col {
+        width: 100%;
+    }
+}
+
+@media all and (min-width: 321px) and (max-width: 768px) {
+    .grid .col {
+        width: 50%;
+    }
+}
+
+@media all and (min-width: 769px) and (max-width: 1200px) {
+    .grid .col {
+        width: 33, 33%;
+    }
+}
+
+@media all and (min-width: 1200px) {
+    .grid .col {
+        width: 25%;
+    }
+}

@@ -1,0 +1,56 @@
+/*
+506min
+style       ID      Classes, atributos e pseudo-classes     Elementos e pseudo-elementos
+  X         1       0                                       0
+            0       1                                       0
+            1       1                                       0
+            1       1                                       1
+            2       1                                       1
+            2       1                                       2
+            2       2                                       3
+!important: pouco usado, força o navegador.           
+
+display: block é por padrão o display das div em qualquer navegador!
+margin: 0   1   3   4       0 é em cima
+                            1 é a direita
+                            3 é em baixo
+                            4 é a esquerda
+
+box-sizing: contet-box      significa que border, padding e margin serão somados.                          
+box-sizing: padding-box     significa que o padding vai começar a ser acrescentado para dentro.
+box-sizing: border-box       significa que se uma div tem 100px, é 100px para altura e largura+altura e largura do padding+altura e largura da borda. Só a margem não entra até pq a margin é para empurrar o conteúdo para longe de outro.
+clear: left ou right        Força o elemento limpar o lado escolhido antes de aparecer.
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    /* alinha os itens no eixo principal */
+    flex-wrap: wrap;
+    background-color: yellowgreen;
+}
+
+.flex-item {
+    flex-grow: 1;
+    /* essa propriedade basicamente pega o espaço que sobra e distribui para todos os elementos */
+    flex-basis: 320px;
+    /* essa propriedade está dizendo que primeiramente se distribui o 320px paca da elemento. Como o flex-grow está agindo, o que sobrando de espaço vai ser adicionado aos 320px.*/
+    flex-shrink: 0;
+    /* permite ou não que o elemento diminua dos 320px */
+    /* flex: 1 1 320px seria um atalho de modo que flex: grow shrink basis, ou flex: 1 1 320px */
+    height: 200px;
+    color: white;
+    background-color: red;
+}
+
+.flex-item:nth-child(2) {
+    flex: 2 1 320px; /* o espaço que sobrar o elemento vai receber duas vezes a mais que os outros. */ 
+    background-color: purple;
+}

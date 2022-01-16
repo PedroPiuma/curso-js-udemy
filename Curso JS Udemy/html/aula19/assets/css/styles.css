@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.pai .one~.dois {
+    color: red;
+}
+[meu-atributo="valor"] {
+    color: orange;
+}
+
+[checked] {
+    width: 50px;
+    height: 30px;
+}

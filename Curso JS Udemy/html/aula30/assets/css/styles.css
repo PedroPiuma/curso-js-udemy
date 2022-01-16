@@ -1,0 +1,58 @@
+/*
+506min
+style       ID      Classes, atributos e pseudo-classes     Elementos e pseudo-elementos
+  X         1       0                                       0
+            0       1                                       0
+            1       1                                       0
+            1       1                                       1
+            2       1                                       1
+            2       1                                       2
+            2       2                                       3
+!important: pouco usado, força o navegador.           
+
+display: block é por padrão o display das div em qualquer navegador!
+margin: 0   1   3   4       0 é em cima
+                            1 é a direita
+                            3 é em baixo
+                            4 é a esquerda
+
+box-sizing: contet-box      significa que border, padding e margin serão somados.                          
+box-sizing: padding-box     significa que o padding vai começar a ser acrescentado para dentro.
+box-sizing: border-box       significa que se uma div tem 100px, é 100px para altura e largura+altura e largura do padding+altura e largura da borda. Só a margem não entra até pq a margin é para empurrar o conteúdo para longe de outro.
+clear: left ou right        Força o elemento limpar o lado escolhido antes de aparecer.
+
+*/
+html {
+    font-size: 20px;
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.pai {
+    width: 100vw; /* 100% do viewpoint, assim se vê em toda tela que aparece no navegador visivelmente */
+    height: 100vw;
+    background-color: yellow;
+}
+
+.pai > div {
+    width: 50%; 
+    height: 50rem;
+    background-color: blue;
+}
+
+p {
+    /*font-size: 1.5em;  75px pq se baseia no 50px do .pai*/
+    font-size: 1rem; /* relativo ao root do documento, no caso o htmk */
+}
+
+.color-one {
+    background: red;
+}
+
+.color-two {
+    background: turquoise;
+}

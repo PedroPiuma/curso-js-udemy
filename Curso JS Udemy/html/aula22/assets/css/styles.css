@@ -1,0 +1,9 @@
+p:not(.ultimo) {
+    color: blue;
+}
+input:not(:checked) + p {
+    background-color:green;
+}
+input:checked + p {
+    background-color: red;
+}

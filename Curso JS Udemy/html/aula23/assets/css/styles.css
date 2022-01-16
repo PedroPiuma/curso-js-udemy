@@ -1,0 +1,12 @@
+ul li:nth-child(odd) {
+    background-color: brown;
+}
+ul li:nth-child(even) {
+    background-color: pink;
+}
+ul li:nth-child(3n) {
+    background-color: green;
+}   
+ul li:nth-child(3n+5) {
+    background-color: blue;
+}
